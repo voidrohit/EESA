@@ -11,6 +11,7 @@
 body {
     overflow-x: hidden;
     position:relative;
+    background-color: #0d101e;
 }
 html{
     overflow-x: hidden;
@@ -22,10 +23,7 @@ nav{
     align-items: center;
     min-width: 8vh;
     height: 8vh;
-    /* background-image: linear-gradient(rgb(25, 35, 52) 0%, rgb(13, 16, 30) 100%); */
     background-color: black;
-    /* z-index: 100; */
-    /* background-color: #0d101e; */
 }
 
 .logo{
@@ -61,20 +59,17 @@ nav{
     margin: 5px;
 }
 .body {
-    /* background-image: linear-gradient(rgb(25, 35, 52) 0%, rgb(13, 16, 30) 100%); */
-    /* background-color: #0d101e; */
     background-color: black;
-    /* height: 100%; */
 }
 
-.body svg{
+.teslaSVG{
     position: relative;
     left: 50%;
     -webkit-transform: translateX(-50%);
     -ms-transform: translateX(-50%);
     transform: translateX(-50%);
-    z-index: 0;
 }
+
 
 #TSign {
     stroke-dasharray: 2000;
@@ -88,59 +83,61 @@ nav{
     }
   }
 .timeline {
-    /* background-image: linear-gradient(rgb(25, 35, 52) 0%, rgb(13, 16, 30) 100%); */
     background-color: #0d101e;
 }
 .about {
-    display: grid;
-    grid-template-columns: 2fr 3fr;
-    height: 400px;
-    /* margin-bottom: 100px; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .about svg {
-    position: relative;
-    left: 60%;
-    -webkit-transform: translateX(-30%);
-    -ms-transform: translateX(-30%);
-    transform: translateX(-30%);
-    z-index: 0;
+    width: 30%;
 }
 .about #text{
-    position: relative;
-    /* top: 25%; */
-    left: 10%;
-    margin-right: 60%;
+    padding: 10px 10px;
+    margin: 20px 20px;
+    width: 30%;
     color: white;
-    /* height: 100vh; */
 }
 .about h1 {
     text-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 0px #61BADD, 0 0 0px #61BADD, 0 0 50px #61BADD, 0 0 0px #61BADD, 0 0 70px #61BADD;
 }
 .blog {
-    /* background-color: #0d101e; */
-    /* height: 50vh; */
-    display: grid;
-    grid-template-columns: 3fr 2fr;
-    /* height: calc(50vh - 10px); */
-    /* margin-bottom: 100px; */
-}
-.blog svg {
-    position: relative;
-    z-index: 0;
+    display: flex;
+    /* flex-direction: row; */
+    justify-content: center;
+    align-items: center;
+
 }
 .blog #text{
-    position: relative;
-    /* top: 40%; */
-    left: 30%;
-    /* margin-left: 20%; */
-    margin-right: 50%;
+    padding: 10px 10px;
+    margin: 20px 20px;
+    width: 30%;
     color: white;
-    /* bottom: auto; */
 }
 .blog h1 {
     text-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 0px #61BADD, 0 0 0px #61BADD, 0 0 50px #61BADD, 0 0 0px #61BADD, 0 0 70px #61BADD;
 }
-
+.commingsoon {
+    text-align: center;
+    margin: 40px 0px 0px 0px;
+}
+.commingsoon button{
+    background-color: orangered;
+    border: none;
+    border-radius: 12px;
+    color: white;
+    padding: 10px 22px;
+    text-decoration: none;
+    display: inline-block;
+    align-items: center;
+    font-size: 15px;
+    margin: 4px 2px;
+    cursor: pointer;
+    /* box-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 0px #61BADD, 0 0 0px #61BADD, 0 0 50px #61BADD, 0 0 0px #61BADD, 0 0 70px #61BADD;; */
+    background-image: linear-gradient(rgb(25, 35, 52) 0%, rgb(13, 16, 30) 100%);
+    text-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 0px #61BADD, 0 0 0px #61BADD, 0 0 50px #61BADD, 0 0 0px #61BADD, 0 0 70px #61BADD;
+}
 .activity {
     display: flex;
     flex-direction: column;
@@ -188,7 +185,6 @@ nav{
     -ms-transform: scale(1.025);
     transform: scale(1.025);
     /* text-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 0px #61BADD, 0 0 0px #61BADD, 0 0 50px #61BADD, 0 0 0px #61BADD, 0 0 70px #61BADD; */
-
 }
 
 footer {
@@ -256,14 +252,21 @@ footer a {
 
 @media screen and (max-width: 768px){
     body{
-        overflow: hidden;
+        overflow-x: hidden;
+    }
+    nav{
+        z-index: 10;
+    }
+    .burger{
+        /* position: fixed; */
+        right: 10%;
+        z-index: 100;
     }
     .nav-links{
-        position: absolute;
+        position: fixed;
         right: 0px;
-        height: 90vh;
-        top: 5.2vh;
-        /* background-color: #0d101e; */
+        height: 100vh;
+        top: 0vh;
         background-color: black;
         display: flex;
         flex-direction: column;
@@ -279,7 +282,7 @@ footer a {
     .burger{
         display: block;
     }
-    .body svg{
+    .teslaSVG{
         width: 50vh;
     }
     .activities {
@@ -303,28 +306,35 @@ footer a {
         height: auto;
     }
     .about{
-        display: flex;
         flex-direction: column;
-        /* justify-content: center; */
-        align-items: flex-start;
+        margin-bottom: 50%;
        
     }
+    .about svg {
+        width: 100%;
+    }
     .about #text{
-        /* margin-top: 10%; */
-        margin-left: 10%;
-        margin-right: 20%;
+        margin-left: 0%;
+        margin-right: 0%;
+        width: 80%;
     }
     .blog{
-        display: flex;
-        justify-content: center;
+        width: 100%;
         flex-direction: column-reverse;
-        align-items: center;
+        margin-bottom: 50%;
+    }
+    .blog #text{
+        width: 80%;
     }
     .blog svg{
-        margin-top: 30%;
+        display: flex;
+        flex-direction: column-reverse;
     }
     #description {
         display: none;
+    }
+    .logo svg {
+        width: 120px;
     }
     
 }
