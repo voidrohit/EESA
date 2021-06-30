@@ -15,6 +15,10 @@ app.get('/', (req, res) => {
   res.render('dashboard');
 });
 
+app.post('/eesa', (req, res) => {
+  res.redirect("https://eesafolio.herokuapp.com/")
+})
+
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}!`)
 });
